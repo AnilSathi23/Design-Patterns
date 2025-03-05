@@ -287,6 +287,7 @@ public class Main {
 From Google
 In object-oriented programming (OOP), polymorphism refers to the ability of an object to take on multiple forms, meaning a single method name can perform different actions depending on the object type it is called on; essentially, allowing you to use the same interface for different underlying types, like calling a "print" method on a circle and a square, even though they will output different results based on their shape.
 
+```java
 class Calculator {
     // Overloaded methods with different parameter types
     int add(int a, int b) {
@@ -311,7 +312,7 @@ public class Main {
         System.out.println(calc.add("Hello, ", "World!")); // Calls the string version
     }
 }
-
+```
 
 OOP Principles
 
