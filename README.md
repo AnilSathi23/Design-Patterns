@@ -682,8 +682,7 @@ class Human implements Workable, Eatable, Sleepable {
 Now, the Robot class only implements the Workable interface, and it is not forced to implement unrelated methods like eat and sleep. Similarly, the Human class can implement all relevant interfaces.
 
 ### Benefits of ISP:
+
 - **Enhances Code Clarity**: By keeping interfaces small and focused, they are easier to understand.
-
 - **Improves Maintainability**: Changes in one interface won’t impact unrelated classes.
-
 - **Increases Flexibility**: Classes only implement what they truly need.
