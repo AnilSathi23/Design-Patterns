@@ -8,8 +8,24 @@ OOP Building Blocks
 
 1) ABSTRACTION
 
-From Google
-In Object-Oriented Programming (OOP), "abstraction" means hiding the internal complexities of an object and only exposing the essential features or functionalities that a user needs to interact with, essentially presenting a simplified view of a system without revealing unnecessary details; a real-world example is using a remote control for a TV - you only need to press buttons to change channels, not understand the intricate electronics behind it
+In Java, abstraction is one of the core principles of object-oriented programming (OOP). It focuses on hiding the implementation details of a class or method and exposing only the essential features to the user. This allows developers to work at a higher level of abstraction, concentrating on what an object does rather than how it does it.
+
+Key points about abstraction in Java:
+
+- Abstract Classes:
+    - A class can be declared as abstract using the abstract keyword.
+    - It may include abstract methods (methods without a body) as well as concrete methods (methods with an implementation).
+    - Abstract classes cannot be instantiated directly; instead, they must be extended by a subclass that provides the implementation for abstract methods.
+
+- Interfaces:
+    - Interfaces are another way to achieve abstraction.
+    - They can contain abstract methods (by default, all methods in an interface are public and abstract) and, as of Java 8, default methods (with a body) and static methods.
+    - A class implements an interface to define the specific behavior of its methods.
+
+- Benefits of Abstraction:
+    - Simplifies complex systems by focusing only on relevant details.
+    - Improves code maintainability and scalability.
+    - Provides a way to achieve loose coupling between components.
 
 ```java
 // Abstract class
