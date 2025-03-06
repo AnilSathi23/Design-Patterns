@@ -5,7 +5,7 @@ Deign Pattern is a reuable and named solution to a recurring problem in a contex
 Patterns are Discovered Not Created.
 
 OOP Building Blocks
----
+
 ## Abstraction
 
 In Java, abstraction is one of the core principles of object-oriented programming (OOP). It focuses on hiding the implementation details of a class or method and exposing only the essential features to the user. This allows developers to work at a higher level of abstraction, concentrating on what an object does rather than how it does it.
@@ -13,9 +13,9 @@ In Java, abstraction is one of the core principles of object-oriented programmin
 Key points about abstraction in Java:
 
 ### Abstract Classes:
-    - A class can be declared as abstract using the abstract keyword.
-    - It may include abstract methods (methods without a body) as well as concrete methods (methods with an implementation).
-    - Abstract classes cannot be instantiated directly; instead, they must be extended by a subclass that provides the implementation for abstract methods.
+- A class can be declared as abstract using the abstract keyword.
+- It may include abstract methods (methods without a body) as well as concrete methods (methods with an implementation).
+- Abstract classes cannot be instantiated directly; instead, they must be extended by a subclass that provides the implementation for abstract methods.
 
 ### Interfaces:
     - Interfaces are another way to achieve abstraction.
@@ -27,7 +27,7 @@ Key points about abstraction in Java:
     - Improves code maintainability and scalability.
     - Provides a way to achieve loose coupling between components.
 
----
+
 ```java
 // Abstract class
 abstract class Animal {
