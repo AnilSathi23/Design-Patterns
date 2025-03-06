@@ -6,7 +6,7 @@
 
 ## Abstraction
 
-In Java, abstraction is one of the core principles of object-oriented programming (OOP). It focuses on hiding the implementation details of a class or method and exposing only the essential features to the user. This allows developers to work at a higher level of abstraction, concentrating on what an object does rather than how it does it.
+ Abstraction focuses on hiding the implementation details of a class or method and exposing only the essential features to the user. This allows developers to work at a higher level of abstraction, concentrating on what an object does rather than how it does it.
 
 Key points about abstraction in Java:
 
@@ -66,7 +66,7 @@ public class Main {
 
 ## Encapsulation
 
-Encapsulation is a fundamental concept of Object-Oriented Programming (OOP) in Java. It refers to the bundling of data (fields) and methods (functions) that operate on the data into a single unit, usually a class. Encapsulation is also about restricting direct access to some of the object's components, which is achieved through access modifiers.
+Encapsulation refers to the bundling of data (fields) and methods (functions) that operate on the data into a single unit, usually a class. Encapsulation is also about restricting direct access to some of the object's components, which is achieved through access modifiers.
 
 ## Key Aspects of Encapsulation:
 
@@ -191,7 +191,7 @@ public class Main {
 
 ## Inheritance
 
-Inheritance is one of the key principles of Object-Oriented Programming (OOP) in Java. It allows a class (called the "child" or "subclass") to inherit the properties and methods of another class (called the "parent" or "superclass"). This helps in reusing code, establishing a hierarchy, and creating more organized and scalable systems.
+Inheritance allows a class (called the "child" or "subclass") to inherit the properties and methods of another class (called the "parent" or "superclass"). This helps in reusing code, establishing a hierarchy, and creating more organized and scalable systems.
 
 ## Key Points about Inheritance:
 
@@ -241,7 +241,7 @@ public class Main {
 
 ## Polymorphism
 
-Polymorphism is one of the fundamental principles of Object-Oriented Programming (OOP) in Java. The term "polymorphism" comes from Greek, meaning "many forms." In Java, it refers to the ability of a method or an object to take on many forms, enabling flexibility and scalability in programming.
+Polymorphism comes from Greek, meaning "many forms." In Java, it refers to the ability of a method or an object to take on many forms, enabling flexibility and scalability in programming.
 
 ## Types of Polymorphism in Java
 
