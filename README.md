@@ -5,28 +5,29 @@ Deign Pattern is a reuable and named solution to a recurring problem in a contex
 Patterns are Discovered Not Created.
 
 OOP Building Blocks
-
-1) ABSTRACTION
+---
+## Abstraction
 
 In Java, abstraction is one of the core principles of object-oriented programming (OOP). It focuses on hiding the implementation details of a class or method and exposing only the essential features to the user. This allows developers to work at a higher level of abstraction, concentrating on what an object does rather than how it does it.
 
 Key points about abstraction in Java:
 
-- Abstract Classes:
+### Abstract Classes:
     - A class can be declared as abstract using the abstract keyword.
     - It may include abstract methods (methods without a body) as well as concrete methods (methods with an implementation).
     - Abstract classes cannot be instantiated directly; instead, they must be extended by a subclass that provides the implementation for abstract methods.
 
-- Interfaces:
+### Interfaces:
     - Interfaces are another way to achieve abstraction.
     - They can contain abstract methods (by default, all methods in an interface are public and abstract) and, as of Java 8, default methods (with a body) and static methods.
     - A class implements an interface to define the specific behavior of its methods.
 
-- Benefits of Abstraction:
+### Benefits of Abstraction:
     - Simplifies complex systems by focusing only on relevant details.
     - Improves code maintainability and scalability.
     - Provides a way to achieve loose coupling between components.
 
+---
 ```java
 // Abstract class
 abstract class Animal {
@@ -65,7 +66,7 @@ public class Main {
 }
 ```
 
-2) ENCAPSULATION
+## Encapsulation
 
 From Google
 In Object-Oriented Programming (OOP), encapsulation means bundling data (attributes) with the methods that operate on that data into a single unit, essentially "wrapping" them together within a class, thereby hiding internal implementation details and providing controlled access to the data through public methods, like "getters" and "setters"; this protects the data from unauthorized modification and promotes modularity in your code.
@@ -240,7 +241,7 @@ public class Main {
 ```
 
 
-3) INHERITANCE
+## Inheritance
 
 From Google
 In Object-Oriented Programming (OOP), inheritance is a mechanism where one class (called a child class or subclass) acquires the properties and behaviors of another class (called a parent class or superclass), allowing for code reuse and creating hierarchical relationships between classes; essentially, a child class "inherits" characteristics from its parent class, like how a real-world child inherits traits from their parents.
@@ -280,7 +281,7 @@ public class Main {
 }
 ```
 
-4) POLYMORPHISM
+## Polymorphism
 
 From Google
 In object-oriented programming (OOP), polymorphism refers to the ability of an object to take on multiple forms, meaning a single method name can perform different actions depending on the object type it is called on; essentially, allowing you to use the same interface for different underlying types, like calling a "print" method on a circle and a square, even though they will output different results based on their shape.
@@ -311,17 +312,17 @@ public class Main {
     }
 }
 ```
+---
+## OOP Principles
 
-OOP Principles
-
-- SOLID
+### SOLID
     - Single Responsibility
     - Open-Closed
     - Loskov Substitution
     - Interface segregation
     - Dependency Injection
 
-- OTHER
+### OTHER
     - Don't repeat yourself (DRY)
     - Encapsulate what changes
     - Favour composition over inheritance
@@ -329,7 +330,7 @@ OOP Principles
 
 
 
-- Single Responsibility
+## Single Responsibility
 
 
 ```java
