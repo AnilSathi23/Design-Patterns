@@ -1,10 +1,8 @@
 # Design-Patterns
 
-Deign Pattern is a reuable and named solution to a recurring problem in a context.
-
-Patterns are Discovered Not Created.
-
-OOP Building Blocks
+- A design pattern is a reusable, well-defined solution to a recurring problem within a specific context.
+- Design patterns are not invented but discovered—they emerge from proven practices and shared experiences.
+- Object-Oriented Programming (OOP) Building Blocks: Fundamental principles and concepts that form the foundation of OOP.
 
 ## Abstraction
 
@@ -68,8 +66,26 @@ public class Main {
 
 ## Encapsulation
 
-From Google
-In Object-Oriented Programming (OOP), encapsulation means bundling data (attributes) with the methods that operate on that data into a single unit, essentially "wrapping" them together within a class, thereby hiding internal implementation details and providing controlled access to the data through public methods, like "getters" and "setters"; this protects the data from unauthorized modification and promotes modularity in your code.
+Encapsulation is a fundamental concept of Object-Oriented Programming (OOP) in Java. It refers to the bundling of data (fields) and methods (functions) that operate on the data into a single unit, usually a class. Encapsulation is also about restricting direct access to some of the object's components, which is achieved through access modifiers.
+
+## Key Aspects of Encapsulation:
+
+### Data Hiding:
+
+- Fields (variables) in a class are often declared as private to prevent unauthorized access.
+- Access to these fields is controlled through public methods, known as getters and setters.
+
+### Controlled Access:
+
+- By using getter methods, you can read the value of private fields.
+
+- By using setter methods, you can modify the value, potentially adding validation logic.
+
+### Improved Maintainability:
+
+- Since data is hidden, internal implementation details can be changed without affecting external code that uses the class.
+
+- It ensures loose coupling between different components of a program.
 
 ```java
 // Class with private data and public methods
@@ -118,74 +134,6 @@ public class Main {
     }
 }
 ```
-
-
-```java
-//Data Encapsulation
-// Class with encapsulated fields
-class Employee {
-    // Private fields (encapsulation)
-    private String name;
-    private int age;
-    private double salary;
-
-    // Public getter for 'name'
-    public String getName() {
-        return name;
-    }
-
-    // Public setter for 'name'
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    // Public getter for 'age'
-    public int getAge() {
-        return age;
-    }
-
-    // Public setter for 'age'
-    public void setAge(int age) {
-        if (age > 0) { // Age validation
-            this.age = age;
-        } else {
-            System.out.println("Age must be positive.");
-        }
-    }
-
-    // Public getter for 'salary'
-    public double getSalary() {
-        return salary;
-    }
-
-    // Public setter for 'salary'
-    public void setSalary(double salary) {
-        if (salary > 0) { // Salary validation
-            this.salary = salary;
-        } else {
-            System.out.println("Salary must be positive.");
-        }
-    }
-}
-
-// Main class to demonstrate encapsulation
-public class Main {
-    public static void main(String[] args) {
-        Employee emp = new Employee();
-
-        // Setting fields using setter methods
-        emp.setName("Alice");
-        emp.setAge(30);
-        emp.setSalary(50000);
-
-        // Accessing fields using getter methods
-        System.out.println("Employee Name: " + emp.getName());
-        System.out.println("Employee Age: " + emp.getAge());
-        System.out.println("Employee Salary: " + emp.getSalary());
-    }
-}
-```
-
 
 ```java
 //Behaviour enapsulation
@@ -243,8 +191,18 @@ public class Main {
 
 ## Inheritance
 
-From Google
-In Object-Oriented Programming (OOP), inheritance is a mechanism where one class (called a child class or subclass) acquires the properties and behaviors of another class (called a parent class or superclass), allowing for code reuse and creating hierarchical relationships between classes; essentially, a child class "inherits" characteristics from its parent class, like how a real-world child inherits traits from their parents.
+Inheritance is one of the key principles of Object-Oriented Programming (OOP) in Java. It allows a class (called the "child" or "subclass") to inherit the properties and methods of another class (called the "parent" or "superclass"). This helps in reusing code, establishing a hierarchy, and creating more organized and scalable systems.
+
+## Key Points about Inheritance:
+
+### Parent (Superclass) and Child (Subclass):
+
+- The parent class contains common properties and methods.
+- The child class inherits these members and can add its own unique functionality.
+
+### extends Keyword:
+
+- In Java, inheritance is achieved using the extends keyword
 
 
 ```java
@@ -283,8 +241,14 @@ public class Main {
 
 ## Polymorphism
 
-From Google
-In object-oriented programming (OOP), polymorphism refers to the ability of an object to take on multiple forms, meaning a single method name can perform different actions depending on the object type it is called on; essentially, allowing you to use the same interface for different underlying types, like calling a "print" method on a circle and a square, even though they will output different results based on their shape.
+Polymorphism is one of the fundamental principles of Object-Oriented Programming (OOP) in Java. The term "polymorphism" comes from Greek, meaning "many forms." In Java, it refers to the ability of a method or an object to take on many forms, enabling flexibility and scalability in programming.
+
+## Types of Polymorphism in Java
+
+### Compile-Time Polymorphism (Static Binding):
+
+- Achieved through method overloading.
+- The method to be called is determined at compile-time based on the method signature (method name, parameters, and their types).
 
 ```java
 class Calculator {
@@ -312,6 +276,45 @@ public class Main {
     }
 }
 ```
+## Runtime Polymorphism (Dynamic Binding):
+
+### Achieved through method overriding.
+
+- The method to be called is determined at runtime based on the actual object.
+- This is commonly used when a subclass provides its own implementation of a method defined in its superclass.
+
+```java
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myAnimal = new Dog();  // Runtime decision
+        myAnimal.makeSound();         // Output: Dog barks
+
+        myAnimal = new Cat();         // Runtime decision
+        myAnimal.makeSound();         // Output: Cat meows
+    }
+}
+```
+
 ---
 ## OOP Principles
 
