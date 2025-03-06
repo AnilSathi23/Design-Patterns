@@ -322,7 +322,7 @@ public class Main {
 - Single Responsibility Principle (SRP)
 - Open-Closed Principle (OCP)
 - Liskov Substitution Principle (LSP)
-- Interface segregation
+- Interface Segregation Principle (ISP)
 - Dependency Injection
 
 ### OTHER
@@ -590,3 +590,100 @@ Here, Rectangle and Square implement the same Shape interface, but they do not o
 - Predictability: Ensures that subclasses behave consistently with their parent classes.
 - Maintainability: Reduces the risk of bugs when replacing or extending functionality.
 - Code Reusability: Promotes modular and interchangeable design.
+
+
+## Interface Segregation Principle (ISP)
+
+A class should not be forced to implement interfaces it does not use.
+
+In simpler terms, this principle emphasizes that interfaces should be small and specific to the needs of the implementing classes, rather than large, generalized interfaces that force classes to implement unnecessary methods.
+
+## Key Points:
+
+### Keep Interfaces Focused:
+
+- Avoid creating large, "fat" interfaces with too many methods.
+- Instead, split them into smaller, more specific interfaces that cater to the needs of specific classes.
+
+### Improves Flexibility:
+
+- Classes implementing interfaces are not burdened with irrelevant or unnecessary methods, keeping them focused on their intended functionality.
+
+### Prevents Implementation Overhead:
+
+- When interfaces are too broad, implementing classes might have to include "empty" or unused methods, which can lead to confusion and unnecessary code.
+
+Example Without Following ISP:
+
+```java
+// Large interface with methods that might not be relevant for all classes
+interface Worker {
+    void work();
+    void eat();
+    void sleep();
+}
+
+// A robot class is forced to implement methods it doesn't use
+class Robot implements Worker {
+    public void work() {
+        System.out.println("Robot is working.");
+    }
+
+    public void eat() {
+        // Robots don't eat
+    }
+
+    public void sleep() {
+        // Robots don't sleep
+    }
+}
+```
+In this case, the Robot class is forced to implement the eat and sleep methods, even though they are irrelevant for its functionality.
+
+Example Following ISP:
+
+```java
+// Split the large interface into smaller, focused interfaces
+interface Workable {
+    void work();
+}
+
+interface Eatable {
+    void eat();
+}
+
+interface Sleepable {
+    void sleep();
+}
+
+// A robot only implements what it needs
+class Robot implements Workable {
+    public void work() {
+        System.out.println("Robot is working.");
+    }
+}
+
+// A human implements all relevant interfaces
+class Human implements Workable, Eatable, Sleepable {
+    public void work() {
+        System.out.println("Human is working.");
+    }
+
+    public void eat() {
+        System.out.println("Human is eating.");
+    }
+
+    public void sleep() {
+        System.out.println("Human is sleeping.");
+    }
+}
+```
+
+Now, the Robot class only implements the Workable interface, and it is not forced to implement unrelated methods like eat and sleep. Similarly, the Human class can implement all relevant interfaces.
+
+### Benefits of ISP:
+- **Enhances Code Clarity**: By keeping interfaces small and focused, they are easier to understand.
+
+- **Improves Maintainability**: Changes in one interface won’t impact unrelated classes.
+
+- **Increases Flexibility**: Classes only implement what they truly need.
