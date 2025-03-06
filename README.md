@@ -319,9 +319,9 @@ public class Main {
 ## SOLID Principles
 
 ### SOLID
-- Single Responsibility
-- Open-Closed
-- Loskov Substitution
+- Single Responsibility Principle (SRP)
+- Open-Closed Principle (OCP)
+- Liskov Substitution Principle (LSP)
 - Interface segregation
 - Dependency Injection
 
@@ -418,3 +418,175 @@ class InvoiceRepository {
 }
 
 ```
+
+## Open/Closed Principle (OCP)
+
+A software entity (such as a class, module, or function) should be open for extension but closed for modification.
+
+### Explanation
+
+- Open for Extension: You can add new functionality to a class or module without altering its existing code.
+- Closed for Modification: Once a class or module is implemented, its existing code shouldn't be modified. This protects the stability of the system while allowing for adaptability.
+
+```java
+//Example Without Following OCP:
+class NotificationService {
+    public void sendNotification(String type) {
+        if (type.equals("Email")) {
+            System.out.println("Sending Email Notification...");
+        } else if (type.equals("SMS")) {
+            System.out.println("Sending SMS Notification...");
+        }
+    }
+}
+```
+
+Adding a new notification type (e.g., "Push Notification") requires modifying the sendNotification method, which violates the principle.
+
+```java
+//Example Following OCP:
+// Base interface
+interface Notification {
+    void send();
+}
+
+// Email Notification
+class EmailNotification implements Notification {
+    public void send() {
+        System.out.println("Sending Email Notification...");
+    }
+}
+
+// SMS Notification
+class SMSNotification implements Notification {
+    public void send() {
+        System.out.println("Sending SMS Notification...");
+    }
+}
+
+// Main Service
+public class NotificationService {
+    public void sendNotification(Notification notification) {
+        notification.send();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        NotificationService service = new NotificationService();
+
+        Notification email = new EmailNotification();
+        Notification sms = new SMSNotification();
+
+        service.sendNotification(email); // Output: Sending Email Notification...
+        service.sendNotification(sms);   // Output: Sending SMS Notification...
+    }
+}
+```
+
+### In this example:
+
+- The NotificationService class is closed for modification because we don’t alter its code when adding a new notification type.
+- The system is open for extension because you can create new classes (e.g., PushNotification) that implement the Notification interface.
+
+### Benefits of Following OCP:
+
+- Scalability: Adding new features doesn’t require changes to the core code.
+- Maintainability: Reduces the likelihood of introducing bugs when adding new functionality.
+- Flexibility: Promotes modular and extensible design.
+
+## Liskov Substitution Principle (LSP)
+
+LSP emphasizes that objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program. In other words, a subclass must adhere to the behavior and contract of its parent class, ensuring that the program remains functional and predictable.
+
+### Explanation:
+
+- If a program is written using a superclass, it should work the same if that superclass is replaced with one of its subclasses.
+- Subclasses should not violate the expectations set by the superclass, such as method behaviors or constraints.
+
+```java
+//Example Without Following LSP:
+class Rectangle {
+    private int width;
+    private int height;
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int getArea() {
+        return width * height;
+    }
+}
+//Now, a subclass for Square might break the principle if its behavior diverges:
+class Square extends Rectangle {
+    @Override
+    public void setWidth(int width) {
+        super.setWidth(width);
+        super.setHeight(width); // Sets both width and height to maintain a square
+    }
+
+    @Override
+    public void setHeight(int height) {
+        super.setWidth(height);
+        super.setHeight(height); // Sets both height and width
+    }
+}
+//Using Square in place of Rectangle can cause unexpected behavior:
+Rectangle rect = new Square();
+rect.setWidth(5);
+rect.setHeight(10); // Breaks expectations: width and height are no longer independent
+System.out.println(rect.getArea()); // Output is 100, not the expected 50
+```
+
+### Example Following LSP:
+To follow the Liskov Substitution Principle, avoid forcing subclasses to modify inherited behaviors:
+
+```java
+interface Shape {
+    int getArea();
+}
+
+class Rectangle implements Shape {
+    private int width;
+    private int height;
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    @Override
+    public int getArea() {
+        return width * height;
+    }
+}
+
+class Square implements Shape {
+    private int side;
+
+    public void setSide(int side) {
+        this.side = side;
+    }
+
+    @Override
+    public int getArea() {
+        return side * side;
+    }
+}
+```
+
+Here, Rectangle and Square implement the same Shape interface, but they do not override or change behaviors unexpectedly. Both classes are independent and interchangeable.
+
+### Benefits of Following LSP:
+
+- Predictability: Ensures that subclasses behave consistently with their parent classes.
+- Maintainability: Reduces the risk of bugs when replacing or extending functionality.
+- Code Reusability: Promotes modular and interchangeable design.
