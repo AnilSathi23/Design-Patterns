@@ -18,14 +18,14 @@ Key points about abstraction in Java:
 - Abstract classes cannot be instantiated directly; instead, they must be extended by a subclass that provides the implementation for abstract methods.
 
 ### Interfaces:
-    - Interfaces are another way to achieve abstraction.
-    - They can contain abstract methods (by default, all methods in an interface are public and abstract) and, as of Java 8, default methods (with a body) and static methods.
-    - A class implements an interface to define the specific behavior of its methods.
+- Interfaces are another way to achieve abstraction.
+- They can contain abstract methods (by default, all methods in an interface are public and abstract) and, as of Java 8, default methods (with a body) and static methods.
+- A class implements an interface to define the specific behavior of its methods.
 
 ### Benefits of Abstraction:
-    - Simplifies complex systems by focusing only on relevant details.
-    - Improves code maintainability and scalability.
-    - Provides a way to achieve loose coupling between components.
+- Simplifies complex systems by focusing only on relevant details.
+- Improves code maintainability and scalability.
+- Provides a way to achieve loose coupling between components.
 
 
 ```java
@@ -316,17 +316,17 @@ public class Main {
 ## OOP Principles
 
 ### SOLID
-    - Single Responsibility
-    - Open-Closed
-    - Loskov Substitution
-    - Interface segregation
-    - Dependency Injection
+- Single Responsibility
+- Open-Closed
+- Loskov Substitution
+- Interface segregation
+- Dependency Injection
 
 ### OTHER
-    - Don't repeat yourself (DRY)
-    - Encapsulate what changes
-    - Favour composition over inheritance
-    - Programming to interfaces
+- Don't repeat yourself (DRY)
+- Encapsulate what changes
+- Favour composition over inheritance
+- Programming to interfaces
 
 
 
