@@ -340,19 +340,16 @@ Single Responsibility Principle (SRP) states that a class should have only one r
 ### Focus on a Single Responsibility:
 
 - A class, function, or module should encapsulate a specific functionality or behavior.
-
 - This keeps the design cohesive and easy to understand.
 
 ### Improved Maintainability:
 
 - When a class has a single responsibility, changes in one aspect of the application (e.g., business logic or UI) will only affect the relevant class.
-
 - This reduces the risk of unintentional side effects when modifying code.
 
 ### Separation of Concerns:
 
 - SRP emphasizes dividing the application into distinct parts, where each part addresses a specific concern.
-
 - This enhances modularity and allows for better code reuse.
 
 
@@ -367,9 +364,8 @@ class Report {
         // Code to print the report
     }
 }
-```
 
-```java
+
 // With SRP
 class ReportGenerator {
     public void generateReport() {
@@ -382,4 +378,43 @@ class ReportPrinter {
         // Code to print the report
     }
 }
+```
+
+
+```java
+//Without SRP
+class Invoice {
+    public void calculateTotal() {
+        // Code to calculate total
+    }
+
+    public void printInvoice() {
+        // Code to print invoice
+    }
+
+    public void saveToDatabase() {
+        // Code to save invoice to a database
+    }
+}
+
+//With SRP
+
+class Invoice {
+    public void calculateTotal() {
+        // Code to calculate total
+    }
+}
+
+class InvoicePrinter {
+    public void printInvoice(Invoice invoice) {
+        // Code to print the invoice
+    }
+}
+
+class InvoiceRepository {
+    public void saveToDatabase(Invoice invoice) {
+        // Code to save the invoice to a database
+    }
+}
+
 ```
