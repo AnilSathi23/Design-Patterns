@@ -316,7 +316,7 @@ public class Main {
 ```
 
 ---
-## OOP Principles
+## SOLID Principles
 
 ### SOLID
 - Single Responsibility
@@ -331,45 +331,55 @@ public class Main {
 - Favour composition over inheritance
 - Programming to interfaces
 
-
-
 ## Single Responsibility
+
+Single Responsibility Principle (SRP) states that a class should have only one reason to change, meaning it should have only one responsibility or purpose.
+
+## Key Points about SRP:
+
+### Focus on a Single Responsibility:
+
+- A class, function, or module should encapsulate a specific functionality or behavior.
+
+- This keeps the design cohesive and easy to understand.
+
+### Improved Maintainability:
+
+- When a class has a single responsibility, changes in one aspect of the application (e.g., business logic or UI) will only affect the relevant class.
+
+- This reduces the risk of unintentional side effects when modifying code.
+
+### Separation of Concerns:
+
+- SRP emphasizes dividing the application into distinct parts, where each part addresses a specific concern.
+
+- This enhances modularity and allows for better code reuse.
 
 
 ```java
-// Class responsible for managing book data
-class Book {
-    private String title;
-    private String author;
-
-    public Book(String title, String author) {
-        this.title = title;
-        this.author = author;
+// Regular Java Class
+class Report {
+    public void generateReport() {
+        // Code to generate the report
     }
 
-    public String getTitle() {
-        return title;
+    public void printReport() {
+        // Code to print the report
     }
+}
+```
 
-    public String getAuthor() {
-        return author;
+```java
+// With SRP
+class ReportGenerator {
+    public void generateReport() {
+        // Code to generate the report
     }
 }
 
-// Class responsible for printing book details
-class BookPrinter {
-    public void printDetails(Book book) {
-        System.out.println("Book Title: " + book.getTitle());
-        System.out.println("Book Author: " + book.getAuthor());
-    }
-}
-
-// Main class to demonstrate SRP
-public class Main {
-    public static void main(String[] args) {
-        Book book = new Book("1984", "George Orwell");
-        BookPrinter printer = new BookPrinter();
-        printer.printDetails(book);
+class ReportPrinter {
+    public void printReport() {
+        // Code to print the report
     }
 }
 ```
