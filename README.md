@@ -26,7 +26,7 @@ In java the Abstraction is achieved through interfaces and abstract classes
 
 In this case we can use Abstraction of an Engine to compose abstraciton of a car.
 
-
+```java
 // Abstract class
 abstract class Animal {
     // Abstract method (no body)
@@ -62,7 +62,7 @@ public class Main {
         cat.sound();
     }
 }
-
+```
 
 2) ENCAPSULATION
 
@@ -82,6 +82,7 @@ Encapsulation can also seperate behaviour from other parts of the application
 ![alt text](image-5.png)
 
 
+```java
 // Class with private data and public methods
 class Student {
     // Private fields
@@ -127,7 +128,10 @@ public class Main {
         System.out.println("Student Age: " + student.getAge());
     }
 }
+```
 
+
+```java
 //Data Encapsulation
 // Class with encapsulated fields
 class Employee {
@@ -191,7 +195,10 @@ public class Main {
         System.out.println("Employee Salary: " + emp.getSalary());
     }
 }
+```
 
+
+```java
 //Behaviour enapsulation
 
 class Account {
@@ -242,6 +249,7 @@ public class Main {
         myAccount.withdraw(150.0); // This will show an error message
     }
 }
+```
 
 
 3) INHERITANCE
@@ -249,6 +257,8 @@ public class Main {
 From Google
 In Object-Oriented Programming (OOP), inheritance is a mechanism where one class (called a child class or subclass) acquires the properties and behaviors of another class (called a parent class or superclass), allowing for code reuse and creating hierarchical relationships between classes; essentially, a child class "inherits" characteristics from its parent class, like how a real-world child inherits traits from their parents.
 
+
+```java
 // Parent class (Superclass)
 class Animal {
     void eat() {
@@ -280,7 +290,7 @@ public class Main {
         myDog.bark();  // Calls the 'bark' method from Dog class
     }
 }
-
+```
 
 4) POLYMORPHISM
 
@@ -333,8 +343,8 @@ OOP Principles
 
 - Single Responsibility
 
-\\\JAVA // 
 
+```java
 // Class responsible for managing book data
 class Book {
     private String title;
@@ -370,5 +380,4 @@ public class Main {
         printer.printDetails(book);
     }
 }
-
-\\\
+```
