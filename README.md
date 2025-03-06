@@ -1,13 +1,8 @@
 # Design-Patterns
-This repo contains the materials and code to demonstrate the design patterns
-
-Design Patterns Gang of Four.
 
 Deign Pattern is a reuable and named solution to a recurring problem in a context.
 
 Patterns are Discovered Not Created.
-
-Object Oriented Programming.
 
 OOP Building Blocks
 
@@ -15,16 +10,6 @@ OOP Building Blocks
 
 From Google
 In Object-Oriented Programming (OOP), "abstraction" means hiding the internal complexities of an object and only exposing the essential features or functionalities that a user needs to interact with, essentially presenting a simplified view of a system without revealing unnecessary details; a real-world example is using a remote control for a TV - you only need to press buttons to change channels, not understand the intricate electronics behind it
-
-Is about identifying the essential details or characterestics of an object with an objective to hiding the complexity of how they are implemented.
-
-In java the Abstraction is achieved through interfaces and abstract classes
-
-![alt text](image.png)
-
-![alt text](image-1.png)
-
-In this case we can use Abstraction of an Engine to compose abstraciton of a car.
 
 ```java
 // Abstract class
@@ -68,19 +53,6 @@ public class Main {
 
 From Google
 In Object-Oriented Programming (OOP), encapsulation means bundling data (attributes) with the methods that operate on that data into a single unit, essentially "wrapping" them together within a class, thereby hiding internal implementation details and providing controlled access to the data through public methods, like "getters" and "setters"; this protects the data from unauthorized modification and promotes modularity in your code.
-
-Is all about hiding information. Here is the idea is to protect the applicaiton from one part of the application from other part. So in this case if you have to change one part you dont have to change the other part too.
-
-![alt text](image-2.png)
-
-For lot of people encapsulation is to set the member variables as private and provide setter and getter to control access to these variables.
-
-Encapsulation can also seperate behaviour from other parts of the application
-
-![alt text](image-3.png)
-
-![alt text](image-5.png)
-
 
 ```java
 // Class with private data and public methods
