@@ -579,3 +579,5 @@ Drawing Rectangle with Applying Blue Color
 - When you need to switch between implementations dynamically.
 
 This pattern is especially useful in scenarios with complex systems requiring flexibility.
+
+
